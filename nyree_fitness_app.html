@@ -6,6 +6,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <title>Nyree — Fitness & Nutrition</title>
+<meta name="description" content="Nyree Adams — 26-week GLP-1 nutrition and strength training coaching app">
+<meta name="theme-color" content="#1D9E75">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
@@ -972,6 +975,7 @@ function toggleCheck(key){ state.checklist[key]=!state.checklist[key]; renderPro
 // ─── WEIGHT CHART ─────────────────────────────────────────────────────────────
 let weightChart=null;
 function renderWeightChart(){
+  if(typeof Chart==='undefined') return;
   const ctx=document.getElementById('weight-chart');
   if(!ctx) return;
   if(weightChart){ weightChart.destroy(); weightChart=null; }
